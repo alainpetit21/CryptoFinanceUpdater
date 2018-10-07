@@ -1,0 +1,17 @@
+Sprint 1 : 
+- Get basic text layout
+- Get loading for USD
+- Get loading for Crypto Price
+- Convert according to USD/CAD
+- Get loading for file
+- Copy over file
+- Save file
+
+
+Sprint 2: 
+- Refactor Model
+- Refactor GUI
+
+
+Sprint 3
+
