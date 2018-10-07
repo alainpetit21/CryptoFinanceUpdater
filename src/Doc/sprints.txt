@@ -1,5 +1,5 @@
 Sprint 1 : 
-- Get basic text layout
+- Get basic test layout
 - Get loading for USD
 - Get loading for Crypto Price
 - Convert according to USD/CAD
