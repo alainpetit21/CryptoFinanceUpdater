@@ -13,8 +13,4 @@ public class ModelFactory {
 
 		return mSingletonInstance= new ModelCountainer();
 	}
-
-	public static IEvent createEvent(){        
-		return new Event();
-	}
 }
