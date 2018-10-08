@@ -41,8 +41,8 @@ public class AppCommandMessage_LoadKMyMoneyXML extends AppCommandMessage {
         try {
             DocumentBuilderFactory  objXMLFactory   = DocumentBuilderFactory.newInstance();
             DocumentBuilder         objXMLParser    = objXMLFactory.newDocumentBuilder();
-            Document                objXMLDoc       = objXMLParser.parse("/home/apetit/Documents/Alain Petit/Others/financesTest.xml"); 
-//            Document                objXMLDoc       = objXMLParser.parse("/home/apetit/Documents/Alain Petit/Others/finances.xml"); 
+//            Document                objXMLDoc       = objXMLParser.parse("/home/apetit/Documents/Alain Petit/Others/financesTest.xml"); 
+            Document                objXMLDoc       = objXMLParser.parse("/home/apetit/Documents/Alain Petit/Others/finances.xml"); 
 
             XPath    objXPath    = XPathFactory.newInstance().newXPath();
             NodeList objNodeListPricePair= (NodeList) objXPath.compile("//*[@to='CAD' and @from='"+p_strSymbol+"']").evaluate(objXMLDoc, XPathConstants.NODESET);
@@ -58,7 +58,6 @@ public class AppCommandMessage_LoadKMyMoneyXML extends AppCommandMessage {
                     continue;
 
                 Element     elNodePrice   = (Element) objNodeListPrices.item(i);
-                System.out.printf("node : %s, @source : %s, @price : %s, @date : %s\n", elNodePrice.getTagName(), elNodePrice.getAttribute("source"), elNodePrice.getAttribute("price"), elNodePrice.getAttribute("date"));
                 
                 String stEquation= elNodePrice.getAttribute("price");
                 String[] arstOperands= stEquation.split("/");
