@@ -73,5 +73,15 @@ public class ModelCountainer implements IModelCountainer{
     public void setCryptoRecord(String p_stKey, CryptoQuoteRecord p_objValue){
         m_mapRecordCrypto.put(p_stKey, p_objValue);        
     }
+
+    @Override
+    public CryptoQuoteRecord getCryptoRecord(String p_stKey){
+        return m_mapRecordCrypto.get(p_stKey);
+    }
+
+    @Override
+    public CryptoQuoteRecord getCryptoRecordIdx(int p_nIdx){
+        return getCryptoRecord(m_arID[p_nIdx]);
+    }
 }
 

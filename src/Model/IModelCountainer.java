@@ -18,4 +18,6 @@ public interface IModelCountainer {
     public int getCryptoRecordsSize();
     public String getCryptoIDX(int p_nIdx);
     public void setCryptoRecord(String p_stKey, CryptoQuoteRecord p_objValue);
+    public CryptoQuoteRecord getCryptoRecord(String p_stKey);
+    public CryptoQuoteRecord getCryptoRecordIdx(int p_nIdx);
 }
