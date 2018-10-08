@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.AppCommandMessage_CopyAndSaveXMLFile;
 import Controller.AppCommandMessage_LoadCryptoJSON;
 import Controller.AppCommandMessage_LoadKMyMoneyXML;
 import Controller.AppCommandMessage_LoadUSDCAD;
@@ -73,7 +74,6 @@ public class JFrame_Main extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         m_fldUSDValue = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -93,7 +93,6 @@ public class JFrame_Main extends javax.swing.JFrame {
         m_fldXMLEthereumValue = new javax.swing.JTextField();
         m_fldXMLLitecoinValue = new javax.swing.JTextField();
         m_fldXMLIOTAValue = new javax.swing.JTextField();
-        m_btLoadUSDValue = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         m_fldBitcoinGoldValue = new javax.swing.JTextField();
         m_fldXMLBitcoinGoldValue = new javax.swing.JTextField();
@@ -135,17 +134,16 @@ public class JFrame_Main extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton14);
 
-        jButton15.setText("4.CopyFile");
+        jButton15.setText("4.CopySaveFile");
         jButton15.setFocusable(false);
         jButton15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton15.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActionPerformed_Step4CopySaveFile(evt);
+            }
+        });
         jToolBar1.add(jButton15);
-
-        jButton18.setText("5.SaveFile");
-        jButton18.setFocusable(false);
-        jButton18.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton18.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton18);
 
         jLabel1.setText("USD to CAD multiplier: ");
 
@@ -162,13 +160,6 @@ public class JFrame_Main extends javax.swing.JFrame {
         jLabel7.setText("Litecoin");
 
         jLabel8.setText("IOTA");
-
-        m_btLoadUSDValue.setText("...");
-        m_btLoadUSDValue.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ActionPerformed_LoadUSDCAD(evt);
-            }
-        });
 
         jLabel9.setText("Bitcoin Gold");
 
@@ -196,9 +187,7 @@ public class JFrame_Main extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_fldUSDValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(m_btLoadUSDValue, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(m_fldUSDValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel5)
@@ -243,8 +232,7 @@ public class JFrame_Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(m_fldUSDValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_btLoadUSDValue))
+                    .addComponent(m_fldUSDValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -282,15 +270,11 @@ public class JFrame_Main extends javax.swing.JFrame {
                     .addComponent(m_fldXMLIOTAValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(m_fldIOTAValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ActionPerformed_LoadUSDCAD(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionPerformed_LoadUSDCAD
-		m_objController.notify(new AppCommandMessage_LoadUSDCAD(this, m_objController));
-    }//GEN-LAST:event_ActionPerformed_LoadUSDCAD
 
     private void ActionPerformed_Step1LoadUSDCAD(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionPerformed_Step1LoadUSDCAD
         m_objController.notify(new AppCommandMessage_LoadUSDCAD(this, m_objController));
@@ -304,12 +288,15 @@ public class JFrame_Main extends javax.swing.JFrame {
         m_objController.notify(new AppCommandMessage_LoadKMyMoneyXML(this, m_objController));
     }//GEN-LAST:event_ActionPerformed_Step3GetXMLFile
 
+    private void ActionPerformed_Step4CopySaveFile(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionPerformed_Step4CopySaveFile
+        m_objController.notify(new AppCommandMessage_CopyAndSaveXMLFile(this, m_objController));
+    }//GEN-LAST:event_ActionPerformed_Step4CopySaveFile
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton18;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -320,7 +307,6 @@ public class JFrame_Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JButton m_btLoadUSDValue;
     private javax.swing.JButton m_btStepOneLoadUSDValue;
     private javax.swing.JTextField m_fldBitcoinCashValue;
     private javax.swing.JTextField m_fldBitcoinGoldValue;

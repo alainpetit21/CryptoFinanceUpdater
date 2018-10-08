@@ -35,6 +35,7 @@ public class AppCommandMessage_LoadCryptoJSON extends AppCommandMessage {
         for(int i= 0; i < p_objModelCoutainer.getCryptoRecordsSize(); ++i){
             CryptoQuoteRecord objRecord= executeInternal(p_objApp, p_objModelCoutainer, p_objView, p_objModelCoutainer.getCryptoIDX(i));
             
+            p_objModelCoutainer.setCryptoRecord(p_objModelCoutainer.getCryptoIDX(i), objRecord);
             p_objView.setCryptoIdxValue(i, Double.parseDouble(objRecord.price_usd) * p_objModelCoutainer.getUSDCAD());
         }
     }
@@ -56,7 +57,6 @@ public class AppCommandMessage_LoadCryptoJSON extends AppCommandMessage {
             Gson gson = new GsonBuilder().create();
             CryptoQuoteRecord[] objRecord = gson.fromJson(reader, CryptoQuoteRecord[].class);
             
-            p_objModelCoutainer.setCryptoRecord(p_stID, objRecord[0]);
             return objRecord[0];
 
 		} catch (MalformedURLException ex) {
