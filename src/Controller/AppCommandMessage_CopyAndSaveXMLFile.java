@@ -130,7 +130,7 @@ public class AppCommandMessage_CopyAndSaveXMLFile extends AppCommandMessage {
             BufferedWriter objWriter = Files.newBufferedWriter(Paths.get(p_filename));
 //            BufferedWriter objWriter2 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Paths.get(p_filename+"-2.xml").toFile()),"UTF-8"), 1*1024*1024);
 
-            String stLine = objReader.readLine();                               //Read the First line in the source
+            String stLine = objReader.readLine();                               //Read the First line in the source, IOT to skip it.
             objWriter.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");    //Write the first line fix
             objWriter.write("<!DOCTYPE KMYMONEY-FILE>\n");                      //Write the Doctype fix line
 //            objWriter2.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");   //Write the first line

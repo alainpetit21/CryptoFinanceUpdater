@@ -14,4 +14,4 @@ Sprint 2:
 
 
 Sprint 3
-
+- create an automatic view-less command line
