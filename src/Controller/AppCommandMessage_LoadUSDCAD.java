@@ -5,7 +5,7 @@ package Controller;
 
 //All internal import
 import Model.IModelCountainer;
-import View.JFrame_Main;
+import View.IView;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -27,7 +27,7 @@ public class AppCommandMessage_LoadUSDCAD extends AppCommandMessage {
 	
 
 	@Override
-	protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, JFrame_Main p_objView){
+	protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, IView p_objView){
         try {
             DocumentBuilderFactory  objXMLFactory   = DocumentBuilderFactory.newInstance();
             DocumentBuilder         objXMLParser    = objXMLFactory.newDocumentBuilder();

@@ -16,7 +16,7 @@ import Controller.IControllerApp;
  *
  * @author apetit
  */
-public class JFrame_Main extends javax.swing.JFrame {
+public class JFrame_Main extends javax.swing.JFrame  implements IView{
 	private IControllerApp m_objController;
     private final javax.swing.JTextField[] m_arFldCryptosValue;
     private final javax.swing.JTextField[] m_arFldKmyMoneyXMLLatestValue;
@@ -42,20 +42,26 @@ public class JFrame_Main extends javax.swing.JFrame {
         m_arFldKmyMoneyXMLLatestValue[3]= m_fldXMLEthereumValue;
         m_arFldKmyMoneyXMLLatestValue[4]= m_fldXMLLitecoinValue;
         m_arFldKmyMoneyXMLLatestValue[5]= m_fldXMLIOTAValue;
+        
+        setVisible(true);
     }
 
+    @Override
     public void setController(IControllerApp p_objController){
 		m_objController= p_objController;
 	}
 
+    @Override
     public void setUSDValue(double p_fValue){
 		m_fldUSDValue.setText(String.format("%f", p_fValue));
 	}
 
+    @Override
     public void setCryptoIdxValue(int p_nIdx, double p_fValue){
 		m_arFldCryptosValue[p_nIdx].setText(String.format("%f", p_fValue));
 	}
 
+    @Override
     public void setXMLIdxValue(int p_nIdx, double p_fValue){
 		m_arFldKmyMoneyXMLLatestValue[p_nIdx].setText(String.format("%f", p_fValue));
 	}

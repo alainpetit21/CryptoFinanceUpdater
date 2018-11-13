@@ -9,7 +9,7 @@ import com.google.gson.GsonBuilder;
 
 //All internal import
 import Model.IModelCountainer;
-import View.JFrame_Main;
+import View.IView;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
 import java.io.FileInputStream;
@@ -31,7 +31,7 @@ public class AppCommandMessage_LoadCryptoJSON extends AppCommandMessage {
 	
     
 	@Override
-	protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, JFrame_Main p_objView){
+	protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, IView p_objView){
         for(int i= 0; i < p_objModelCoutainer.getCryptoRecordsSize(); ++i){
             CryptoQuoteRecord objRecord= executeInternal(p_objApp, p_objModelCoutainer, p_objView, p_objModelCoutainer.getCryptoIDX(i));
             
@@ -40,7 +40,7 @@ public class AppCommandMessage_LoadCryptoJSON extends AppCommandMessage {
         }
     }
     
-	protected CryptoQuoteRecord executeInternal(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, JFrame_Main p_objView, String p_stID){
+	protected CryptoQuoteRecord executeInternal(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, IView p_objView, String p_stID){
 		URL website;
 		ReadableByteChannel rbc;
 		FileOutputStream fos;

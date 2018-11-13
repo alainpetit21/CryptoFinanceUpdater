@@ -2,13 +2,15 @@ package Controller;
 
 import Model.IModelCountainer;
 import Model.ModelFactory;
+import View.IView;
 import View.JFrame_Main;
+import View.ViewFactory;
 
 
 public class CryptoFinanceUpdater implements IControllerApp{
     static private CryptoFinanceUpdater mObjController;  
     static private IModelCountainer mObjModelCountainer;  
-    private JFrame_Main mFrmMain;
+    private IView mFrmMain;
 
 	@Override
 	public void notify(AppCommandMessage msg) {
@@ -32,15 +34,11 @@ public class CryptoFinanceUpdater implements IControllerApp{
                                 break;
                         }
                 }
-        } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(JFrame_Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(JFrame_Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(JFrame_Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
                 java.util.logging.Logger.getLogger(JFrame_Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -48,9 +46,8 @@ public class CryptoFinanceUpdater implements IControllerApp{
             mObjController= new CryptoFinanceUpdater();
             mObjModelCountainer= ModelFactory.getModelCountainer();
 
-            mObjController.mFrmMain = new JFrame_Main();
+            mObjController.mFrmMain = ViewFactory.getGUIView();
 			mObjController.mFrmMain.setController(mObjController);
-            mObjController.mFrmMain.setVisible(true);
         });
     }
 }

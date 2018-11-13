@@ -3,7 +3,7 @@ package Controller;
 
 //All internal import
 import Model.IModelCountainer;
-import View.JFrame_Main;
+import View.IView;
 
 
 /*
@@ -29,5 +29,5 @@ public abstract class AppCommandMessage {
 	}
 
 	//Protected because it shall only be called withing the Controller package
-	abstract protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, JFrame_Main p_objView);
+	abstract protected void execute(IControllerApp p_objApp, IModelCountainer p_objModelCoutainer, IView p_objView);
 }
