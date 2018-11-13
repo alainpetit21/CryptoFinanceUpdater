@@ -2,16 +2,6 @@ package Controller;
 
 
 //All Java import
-import Model.CryptoQuoteRecord;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-
-//All internal import
-import Model.IModelCountainer;
-import View.IView;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -21,6 +11,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+
+//All external import
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+//All internal import
+import Model.CryptoQuoteRecord;
+import Model.IModelCountainer;
+import View.IView;
 
 
 public class AppCommandMessage_LoadCryptoJSON extends AppCommandMessage {

@@ -1,12 +1,8 @@
 package Model;
 
 //All Java imports
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
 
 
 /* The ModelCountainer shall countain the bulk of all data manipulation 

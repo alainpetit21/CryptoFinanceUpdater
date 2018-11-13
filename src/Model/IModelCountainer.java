@@ -1,12 +1,6 @@
 package Model;
 
-//All Java imports
 
-
-/*
- * Using the interface IModelCountainer it is my implementation of the 
- * requirement to have a Observer design pattern. 
- */
 public interface IModelCountainer {
 	public void setEURUSD(double  p_fValue);
 	public void setEURUSD(String  p_stValue);

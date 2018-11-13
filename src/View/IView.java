@@ -1,7 +1,7 @@
 package View;
 
-//All Java imports
 
+//All internal import
 import Controller.IControllerApp;
 
 

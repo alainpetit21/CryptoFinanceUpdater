@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
+
+//All internal import
 import Controller.AppCommandMessage_CopyAndSaveXMLFile;
 import Controller.AppCommandMessage_LoadCryptoJSON;
 import Controller.AppCommandMessage_LoadKMyMoneyXML;
