@@ -9,10 +9,6 @@ import Controller.AppCommandMessage_LoadUSDCAD;
 import Controller.IControllerApp;
 
 
-/**
- *
- * @author apetit
- */
 public class JFrame_Main extends javax.swing.JFrame  implements IView{
 	private IControllerApp m_objController;
     private final javax.swing.JTextField[] m_arFldCryptosValue;
